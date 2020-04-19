@@ -1,0 +1,22 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# TPP223_module
+#
+DEF TPP223_module U 0 40 Y Y 1 F N
+F0 "U" -250 300 50 H I C CNN
+F1 "TPP223_module" 400 300 50 H V C CNN
+F2 "" 150 250 50 H I C CNN
+F3 "" 150 250 50 H I C CNN
+DRAW
+C 150 -50 71 0 0 8 N
+T 0 150 -50 50 0 0 0 LED Normal 0 C C
+T 0 150 100 50 0 0 0 Touch Normal 0 C C
+S -300 200 300 -200 1 1 10 f
+X GND 1 -50 -300 100 U 50 50 1 1 W
+X I/O 2 -400 0 100 R 50 50 1 1 O
+X VCC 3 -50 300 100 D 50 50 1 1 W
+ENDDRAW
+ENDDEF
+#
+#End Library

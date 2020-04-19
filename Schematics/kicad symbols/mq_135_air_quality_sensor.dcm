@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MQ_135_Air_Quality_sensor
+D MQ135 air quality sensor
+K MQ135 gas air quality sensor
+F https://www.olimex.com/Products/Components/Sensors/Gas/SNS-MQ135/resources/SNS-MQ135.pdf
+$ENDCMP
+#
+#End Doc Library

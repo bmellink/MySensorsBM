@@ -25,7 +25,7 @@ F 3 "https://store.arduino.cc/arduino-pro-mini" H 5900 3200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L RF:NRF24L01_Breakout U?
+L basement&bathroom-sensors-rescue:NRF24L01_Breakout-RF U?
 U 1 1 5E992DFB
 P 4250 4000
 F 0 "U?" H 4630 4046 50  0001 L CNN
@@ -72,7 +72,6 @@ F 3 "~" H 7150 2900 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6400 3300 7150 3300
-Connection ~ 7150 3300
 Wire Wire Line
 	7150 3300 7150 3350
 Wire Wire Line
@@ -129,8 +128,8 @@ $Comp
 L Device:R R?
 U 1 1 5E9A3880
 P 6700 1600
-F 0 "R?" H 6770 1646 50  0000 L CNN
-F 1 "R" H 6770 1555 50  0000 L CNN
+F 0 "R?" H 6770 1646 50  0001 L CNN
+F 1 "2K2" H 6770 1600 50  0000 L CNN
 F 2 "" V 6630 1600 50  0001 C CNN
 F 3 "~" H 6700 1600 50  0001 C CNN
 	1    6700 1600
@@ -155,12 +154,9 @@ Wire Wire Line
 	6700 1750 6700 3200
 Connection ~ 6700 3200
 Wire Wire Line
-	4000 2350 4950 2350
-Wire Wire Line
 	4950 2350 4950 2900
 Wire Wire Line
 	4950 2900 5400 2900
-Connection ~ 4000 2350
 $Comp
 L power:+3V3 #PWR?
 U 1 1 5E9A724E
@@ -263,49 +259,33 @@ $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5E9B3A0F
-P 3550 3650
-F 0 "#PWR?" H 3550 3400 50  0001 C CNN
-F 1 "GND" H 3555 3477 50  0000 C CNN
-F 2 "" H 3550 3650 50  0001 C CNN
-F 3 "" H 3550 3650 50  0001 C CNN
-	1    3550 3650
+P 3550 3700
+F 0 "#PWR?" H 3550 3450 50  0001 C CNN
+F 1 "GND" H 3555 3527 50  0000 C CNN
+F 2 "" H 3550 3700 50  0001 C CNN
+F 3 "" H 3550 3700 50  0001 C CNN
+	1    3550 3700
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5E9B78D8
-P 4250 4550
-F 0 "#PWR?" H 4250 4300 50  0001 C CNN
-F 1 "GND" H 4255 4377 50  0000 C CNN
-F 2 "" H 4250 4550 50  0001 C CNN
-F 3 "" H 4250 4550 50  0001 C CNN
-	1    4250 4550
+P 4250 4600
+F 0 "#PWR?" H 4250 4350 50  0001 C CNN
+F 1 "GND" H 4255 4427 50  0000 C CNN
+F 2 "" H 4250 4600 50  0001 C CNN
+F 3 "" H 4250 4600 50  0001 C CNN
+	1    4250 4600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	7150 2750 7150 1900
-Wire Wire Line
-	7150 3250 7150 3300
-Wire Wire Line
-	7150 3050 7150 3300
-Wire Wire Line
-	2050 2350 2050 2900
-Wire Wire Line
-	2050 2900 4850 2900
-Wire Wire Line
-	4850 2900 4850 3000
-Wire Wire Line
-	4850 3000 5400 3000
-Wire Wire Line
-	4000 2000 4000 2350
-Wire Wire Line
-	3500 2350 4000 2350
 $Comp
 L Device:Battery_Cell BT?
 U 1 1 5E9BEAD1
 P 9250 1550
-F 0 "BT?" H 9368 1646 50  0000 L CNN
-F 1 "Battery_Cell" H 9368 1555 50  0000 L CNN
+F 0 "BT?" H 9368 1646 50  0001 L CNN
+F 1 "AA Battery" H 9368 1600 50  0000 L CNN
 F 2 "" V 9250 1610 50  0001 C CNN
 F 3 "~" V 9250 1610 50  0001 C CNN
 	1    9250 1550
@@ -327,7 +307,7 @@ Wire Wire Line
 Wire Wire Line
 	9250 1200 9250 1350
 Wire Wire Line
-	8500 1200 6700 1200
+	8500 1200 7800 1200
 Wire Wire Line
 	6700 1200 6700 1450
 $Comp
@@ -341,8 +321,6 @@ F 3 "" H 9250 1650 50  0001 C CNN
 	1    9250 1650
 	1    0    0    -1  
 $EndComp
-Text Notes 6250 4350 0    50   ~ 0
-Cut line from internal\nregulator and power LED
 $Comp
 L power:+3V3 #PWR?
 U 1 1 5E9B41A8
@@ -379,4 +357,133 @@ Wire Wire Line
 	3550 3400 4250 3400
 Wire Wire Line
 	3300 3400 3550 3400
+$Comp
+L Device:CP C?
+U 1 1 5E9EDAC0
+P 10150 2750
+F 0 "C?" H 10268 2796 50  0001 L CNN
+F 1 "10μ" H 10268 2750 50  0000 L CNN
+F 2 "" H 10188 2600 50  0001 C CNN
+F 3 "~" H 10150 2750 50  0001 C CNN
+	1    10150 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:INDUCTOR L?
+U 1 1 5E9EF5CC
+P 9750 2600
+F 0 "L?" H 9750 2815 50  0001 C CNN
+F 1 "15 mH" H 9750 2723 50  0000 C CNN
+F 2 "" H 9750 2600 50  0001 C CNN
+F 3 "~" H 9750 2600 50  0001 C CNN
+	1    9750 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 5E9F03E5
+P 9300 2750
+F 0 "C?" H 9418 2796 50  0001 L CNN
+F 1 "10μ" H 9418 2750 50  0000 L CNN
+F 2 "" H 9338 2600 50  0001 C CNN
+F 3 "~" H 9300 2750 50  0001 C CNN
+	1    9300 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E9F0CA3
+P 9300 2900
+F 0 "#PWR?" H 9300 2650 50  0001 C CNN
+F 1 "GND" H 9305 2727 50  0000 C CNN
+F 2 "" H 9300 2900 50  0001 C CNN
+F 3 "" H 9300 2900 50  0001 C CNN
+	1    9300 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E9F12E1
+P 10150 2900
+F 0 "#PWR?" H 10150 2650 50  0001 C CNN
+F 1 "GND" H 10155 2727 50  0000 C CNN
+F 2 "" H 10150 2900 50  0001 C CNN
+F 3 "" H 10150 2900 50  0001 C CNN
+	1    10150 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10000 2600 10150 2600
+Connection ~ 10150 2600
+Wire Wire Line
+	10150 2600 10450 2600
+Wire Wire Line
+	9500 2600 9300 2600
+Connection ~ 9300 2600
+Wire Wire Line
+	9300 2600 8900 2600
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5E9F4D0D
+P 10450 2500
+F 0 "#PWR?" H 10450 2350 50  0001 C CNN
+F 1 "+3V3" H 10465 2673 50  0000 C CNN
+F 2 "" H 10450 2500 50  0001 C CNN
+F 3 "" H 10450 2500 50  0001 C CNN
+	1    10450 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10450 2600 10450 2500
+Wire Wire Line
+	4000 2050 4000 2350
+Wire Wire Line
+	4000 2350 4950 2350
+Wire Wire Line
+	3600 2350 4000 2350
+Connection ~ 4000 2350
+Wire Wire Line
+	7150 3050 7150 3300
+Connection ~ 7150 3300
+Wire Wire Line
+	5400 3000 2250 3000
+Wire Wire Line
+	2250 3000 2250 2350
+Wire Wire Line
+	2250 2350 2050 2350
+Wire Notes Line
+	6250 4350 6100 4350
+Wire Notes Line
+	6100 4350 6100 4100
+Text Notes 6250 4350 0    50   ~ 0
+Cut line from internal\nregulator and power LED
+$Comp
+L Regulator_Switching:2108_3V3_module U?
+U 1 1 5EA0606C
+P 8500 2600
+F 0 "U?" H 8500 2967 50  0001 C CNN
+F 1 "2108_3V3_step_up_module" H 8500 2875 50  0000 C CNN
+F 2 "" H 8550 2350 50  0001 L CNN
+F 3 "" H 8500 2600 50  0001 C CNN
+	1    8500 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5EA06C7C
+P 8500 2900
+F 0 "#PWR?" H 8500 2650 50  0001 C CNN
+F 1 "GND" H 8505 2727 50  0000 C CNN
+F 2 "" H 8500 2900 50  0001 C CNN
+F 3 "" H 8500 2900 50  0001 C CNN
+	1    8500 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8100 2600 7800 2600
+Wire Wire Line
+	7800 2600 7800 1200
+Connection ~ 7800 1200
+Wire Wire Line
+	7800 1200 6700 1200
 $EndSCHEMATC

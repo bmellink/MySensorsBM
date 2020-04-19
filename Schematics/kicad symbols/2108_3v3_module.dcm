@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 2108_3V3_module
+D Step-Up DC/DC module 3V3
+K boost step-up DC/DC synchronous
+$ENDCMP
+#
+#End Doc Library

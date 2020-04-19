@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP NRF24L01_Level_Shift-Module
+D Ultra low power 2.4GHz RF Transceiver, Carrier PCB
+K Low Power RF Transciever carrier module levelshift
+$ENDCMP
+#
+#End Doc Library

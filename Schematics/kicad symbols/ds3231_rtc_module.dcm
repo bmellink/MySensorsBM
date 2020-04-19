@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP DS3231_RTC_Module
+D RTC module for arduino DS3231
+K RTC TCXO Realtime Time Clock Crystal Oscillator I2C Module
+F https://components101.com/modules/ds3231-rtc-module-pinout-circuit-datasheet
+$ENDCMP
+#
+#End Doc Library

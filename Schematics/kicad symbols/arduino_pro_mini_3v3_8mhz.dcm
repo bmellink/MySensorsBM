@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Arduino_Pro_Mini_3V3_8Mhz
+D Arduino Pro Mini ATMEGA328 3.3V 8Mhz
+K Arduino nano microcontroller module USB
+F https://store.arduino.cc/arduino-pro-mini
+$ENDCMP
+#
+#End Doc Library

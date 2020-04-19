@@ -16,26 +16,9 @@
  * modify it under the terms of the GNU General Public License
  * version 2 as published by the Free Software Foundation.
  * 
- * Note: using timer0 to generate a second interrupt for our 1 ms counters. timer0 is still also  used for delay()
+ * Air quality (using MQ135 sensor) & Dust (using PMS1003) proving PM1, PM2.5 and PM10 dust partical densities
+ * CAQI value is calculated (see https://en.wikipedia.org/wiki/Air_quality_index)
  *
- * Functions WTW Temperatures - location in hallway closet
- * - Temperature (with Dallas temp) - 4 times
- * - Temperature of incoming water (also Dallas with cable)
- * - analog input for power of hydrofoor pump
- * 
- * The power usage of the pump uses ACS712-5A hall sensor:
- * - At rest this circuit outputs VCC/2 -> 2.5 V (ADC=511)
- * - The extra diode in the circuit lowers the value a bit (2.21V). ADC output at rest is approx 452
- * - The characteristic is 185 mV/A (1A current is 185mV higher, ADC value 37.8 higher)
- * - 1A current (37.8 ADC ticks) is 220Watt -> factor is 5.82 for DC and 4.64 for AC (difference Vpeak and RMS)
- *   Based on measurements the factor should be 8.35
- *   
- * We send both the current power (in Watt) and the total usage (in kWh) to the gateway. 
- * Use VAR1 as storage of the current count (in case of reboot). In VAR1 we store the value in cWh (centi-Watt-hour = 0.01 Wh = 0.00001 kWh)
- * kept in a unsigned long (32 bits). Largest value there is 42949 kWH - which will roll over once ever 24 years on an everage usage of 200 W
- * In order to calculate the kWh number, we add the power usage once per second in a mWh variable once per second which is devided by 10 (to cWh)
- * when adding to the VAR1 value and the total deviced by 100000 before sending as float to the device 
- * 
  *******************************  */
 
 

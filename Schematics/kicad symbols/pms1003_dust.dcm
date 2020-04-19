@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP PMS1003_DUST
+D Dust sensor module
+K Dust sensor PM1 PM2.5 PM10
+$ENDCMP
+#
+#End Doc Library

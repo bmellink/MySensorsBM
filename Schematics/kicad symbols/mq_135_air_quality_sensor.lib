@@ -1,0 +1,22 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# MQ_135_Air_Quality_sensor
+#
+DEF MQ_135_Air_Quality_sensor U 0 40 Y Y 1 F N
+F0 "U" -300 300 79 H I C CNN
+F1 "MQ_135_Air_Quality_sensor" 850 350 79 H V C CNN
+F2 "" 0 0 79 H I C CNN
+F3 "" 0 0 79 H I C CNN
+DRAW
+C 0 0 250 0 1 20 f
+X A1 1 -350 100 100 R 50 50 0 0 W
+X A2 2 350 100 100 L 50 50 0 0 W
+X B1 3 -350 -100 100 R 50 50 0 0 O
+X B2 4 350 -100 100 L 50 50 0 0 O
+X H1 5 0 350 100 D 50 50 0 0 W
+X H2 5 0 -350 100 U 50 50 0 0 W
+ENDDRAW
+ENDDEF
+#
+#End Library

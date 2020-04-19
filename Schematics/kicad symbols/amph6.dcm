@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP AMPH6
+D 6-Pin Amphenol connector
+K circular Amphenol connector
+$ENDCMP
+#
+#End Doc Library

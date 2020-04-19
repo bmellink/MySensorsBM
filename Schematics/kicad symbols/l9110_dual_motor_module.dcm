@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP L9110_Dual_Motor_Module
+D Dual H-Bridge motor driver Module
+K Dual H-Bridge motor driver module arduino
+F https://www.electroschematics.com/l9110-motor-driver-primer/
+$ENDCMP
+#
+#End Doc Library

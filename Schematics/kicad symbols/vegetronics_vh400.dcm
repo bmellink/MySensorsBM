@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Vegetronics_VH400
+D Vegetronics VH400 moisture sensor
+K Vegetronics VH400 moisture sensor
+F https://vegetronix.com/Products/VH400/
+$ENDCMP
+#
+#End Doc Library

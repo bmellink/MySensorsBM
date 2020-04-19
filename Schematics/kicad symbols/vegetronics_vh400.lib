@@ -1,0 +1,20 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# Vegetronics_VH400
+#
+DEF Vegetronics_VH400 U 0 20 Y Y 1 F N
+F0 "U" -300 350 50 H I R CNN
+F1 "Vegetronics_VH400" 1100 0 50 H V R CNN
+F2 "" 0 -600 50 H I C CNN
+F3 "" 70 250 50 H I C CNN
+DRAW
+C 50 0 224 0 0 8 f
+S 250 100 1350 -100 0 1 10 f
+X GND 1 -250 -100 100 R 50 50 0 0 W
+X VCC 2 -250 100 100 R 50 50 0 0 W
+X Out 3 -250 0 100 R 50 50 0 0 O
+ENDDRAW
+ENDDEF
+#
+#End Library

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Rain_Sensor_Module
+D Rain sensor module for arduino
+K Rain sensor Module
+F https://www.openhacks.com/uploadsproductos/rain_sensor_module.pdf
+$ENDCMP
+#
+#End Doc Library

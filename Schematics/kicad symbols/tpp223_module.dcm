@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP TPP223_module
+D TTP223 touch sensor module
+K TPP223 touch sensor module arduino
+F https://hobbycomponents.com/sensors/901-ttp223-capacitive-touch-sensor
+$ENDCMP
+#
+#End Doc Library

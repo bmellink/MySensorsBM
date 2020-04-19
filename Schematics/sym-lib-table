@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name basement&bathroom-sensors-rescue)(type Legacy)(uri "${KIPRJMOD}/basement&bathroom sensors-rescue.lib")(options "")(descr ""))
+  (lib (name sprinkler-rescue)(type Legacy)(uri ${KIPRJMOD}/sprinkler-rescue.lib)(options "")(descr ""))
+)

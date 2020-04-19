@@ -25,17 +25,6 @@ F 3 "https://store.arduino.cc/arduino-pro-mini" H 5900 3200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L RF:NRF24L01_Breakout U?
-U 1 1 5E992DFB
-P 4250 4000
-F 0 "U?" H 4630 4046 50  0001 L CNN
-F 1 "NRF24L01" H 4100 3900 50  0000 L CNN
-F 2 "RF_Module:nRF24L01_Breakout" H 4400 4600 50  0001 L CIN
-F 3 "http://www.nordicsemi.com/eng/content/download/2730/34105/file/nRF24L01_Product_Specification_v2_0.pdf" H 4250 3900 50  0001 C CNN
-	1    4250 4000
-	-1   0    0    -1  
-$EndComp
-$Comp
 L Sensor_Optical:LDR03 R?
 U 1 1 5E99B857
 P 7150 3500
@@ -486,4 +475,15 @@ Wire Wire Line
 Connection ~ 7800 1200
 Wire Wire Line
 	7800 1200 6700 1200
+$Comp
+L _BM_library:NRF24L01_Module U?
+U 1 1 5E9CA4BC
+P 4250 4000
+F 0 "U?" H 3870 4046 50  0001 R CNN
+F 1 "NRF24L01_Module" H 4950 4550 50  0000 R CNN
+F 2 "RF_Module:nRF24L01_Module" H 4400 4600 50  0001 L CIN
+F 3 "" H 4250 3900 50  0001 C CNN
+	1    4250 4000
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
