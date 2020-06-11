@@ -1,9 +1,10 @@
-# MySensorsBM Domotica Arduino semsors based on MySensors for my house
+# Domotica sensors based on Arduino hardware and MySensors for my house
 This repository contains all documentation of Arduino based sensors in my house. The sensors use the MySensors protocol 
 (see https://www.mysensors.org/) which is based on a 2.4 Ghz mesh network using NRF24L01 modules.
 
-Most MySensors examples have a single sensor as part of a scetch. In my case I often have more sensors by sketch,
+Most MySensors examples have a single sensor as part of a sketch. MySensors can handle multiple sensors, 
 such as a light sensor combined with temperature, humidiy and PIR (movement) sensors and actuators like relais.
+This repository is for my house only, but it can be used as example how to build more complex MySensors system.
 
 ### Folder structure
 - **src** - contains all Arduino sketch code
@@ -20,17 +21,11 @@ Outside sensor for air quality. Sensor functions:
 - CAQI value is calculated based on these values (see https://en.wikipedia.org/wiki/Air_quality_index)
 - Air quality is also displayed using RGB colored LEDs
  
-### basementcheck
-This set of sensors is used to report temperature, light and various status signals from a wast water pump. Since I did not want to change the pump itself, I use LDR (light sensors) to see which status LEDs are on, a Microphone to pick up alarm buzzer signals and a current sensor to see if the pump actually runs. The basementcheck module sits next to the **basementhub** module and the 2 communicate to each other using the MySensors protocol. The current sensor is actually connected to the basementhub module and the value is collected from there. Sensors functions included in hardware:
-- Temperature of room "Mark" (using Dallas sensor)
-- Temperature shower water in basement (using Dallas sensor)
-- Light sensor of room "Mark" (based on LDR)
-- A LDR to report the status LED of the waste water pump
-- A LDR to report the error LED of the waste water pump
-- A microphone noise sensor mounted on the pump. We use a fourier funcion lib FHT to understand what happens
-
 ### basementhub
-This set of sensors measure temperature, humidity of the basement area. This sensor module works together with **basementcheck** to communicate the waste water pump motor current value to that module. Functions included in basementhub:
+This set of sensors measure temperature, humidity of the basement area. This sensor module works together with
+**basementcheck** to communicate the waste water pump motor current value to that module. The reason there are
+two separate modules (basementhub and basementcheck) is that the total code size was too large for a single Arduino
+model (Pro Mini using ATMEGA328). Functions included in **basementhub**:
  - Temperature + Humidity sensor pump area
  - Temperature + Humidity sensor bathroom area
  - Light sensor bathroom
@@ -39,6 +34,15 @@ This set of sensors measure temperature, humidity of the basement area. This sen
  - 1 relais to force on basement air ventilator 
  - 2 relais to override basement thermostat (setting auto/manual and setting manual on/off)
  
+### basementcheck
+This set of sensors is used to report temperature, light and various status signals from a wast water pump. Since I did not want to change the pump itself, I use LDR (light sensors) to see which status LEDs are on, a Microphone to pick up alarm buzzer signals and a current sensor to see if the pump actually runs. The basementcheck module sits next to the **basementhub** module and the 2 communicate to each other using the MySensors protocol. The current sensor is actually connected to the basementhub module and the value is collected from there. Sensors functions included in the hardware of **basementcheck**:
+- Temperature of room "Mark" (using Dallas sensor)
+- Temperature shower water in basement (using Dallas sensor)
+- Light sensor of room "Mark" (based on LDR)
+- A LDR to report the status LED of the waste water pump
+- A LDR to report the error LED of the waste water pump
+- A microphone noise sensor mounted on the pump. We use a fourier funcion lib FHT to understand what happens
+
 ### basementplayroom and shower
 These sets of sensors have identical hardware and are battery powered devices to measure:
 - humidity (we use also the humidity part of the DHT11 for this and not the temp part as this is not accurate)
@@ -78,14 +82,26 @@ see if the door is actually locked. These sensors are battery powered. Functions
 - temperature (with Dallas sensor)
 
 ### gateway_W5100
-Todo
+Ethernet gateway to route all NRF24L01 radio signals to the domoticz server. Uses standard code from MySensors and added a relay (output) and PIR sensor
 
 ### ketel_relais
-Todo
+Sets of sensors close to the central heating boiler. The central heating boiler is controlled by a NEST thermostat that uses the Opentherm protocol. However the NEST thermostat is only situated in the living room. A specific relais is added in this unit to override the NEST value and force heating of a part of the house while closing a valve to the living room. Functions in this module:
+- relais for boiler override
+- input from NEST for living room valve
+- relais for living room valve (normally taking the value from the NEST input, but can be overridden)
+- temperature sensor for shower water
 
 ### sprinkler
-Todo
+Sprinker module for 2 separate Gardena sprinkler valves. Any type would do as we remove the computer
+part that came with it and use the tulip connector as interface: exemple: https://www.gardena.com/int/products/watering/water-controls/water-control-flex/967927201/
+
+The module has its own internal RTC (based on DS3231), so the sprinkler can work without a connection to the home automation system. This means we need to store (in EEPROM) the timer start/stop values. Sensor functions included:
+- ground huminidy sensor based on the Vegetronix VG400
+- rain sensor
 
 ### wtw_flow and wtw_temp
-Todo
+These two sensor modules work together to handle all sensors from a WTW (ductch for Warmte-Terug-Win) or Water Heat Recycling installation (see https://en.wikipedia.org/wiki/Water_heat_recycling). The module used (https://www.technea.nl/product/opvolger-rv20dv4-douchepijp-wtw) has two double pipes to recover heat from the shower waste water. The (still warm) shower waste water is cooled down by flowing in a concentric pipe next to the cold water towards the boiler. A total of 2 flow sensors and 7 temperature sensors are used to measure the waterflow to the shower (hot and cold) and temperature (cold entry, pre-warmed cold, shower hot, waste left hot, waste right hot, waste left cold, waste right cold). The flow sensors are based on the Caleffi 316 which has a hall sensor that pulses at 8.8 Hz per liter/min.
+
+- the wtw_flow module connects to 2 flow sensors (shower cold water and boiler cold water entry) and 2 temp sensors
+- the wtw_temp module connects to 5 temperature sensors and an analog input to measure the power usage of the Hydrofor (pressure) pump.
 
